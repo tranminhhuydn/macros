@@ -1,0 +1,20 @@
+{
+  "name": "macros",
+  "main": "./lib/macros",
+  "version": "0.0.0",
+  "description": "Macro for javascript run on atom",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": ["macros:run","macros:updateMenu","macros:openMacro","macros:runFile"]
+  },
+  "repository": "https://github.com/atom/macros",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-select-list": "^0.7.1",
+    "sharp":"https://github.com/lovell/sharp"
+  }
+}

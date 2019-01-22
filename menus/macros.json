@@ -1,0 +1,27 @@
+{
+
+  "menu": [
+
+        {
+          "label": "Macros",
+          "submenu": [
+            {
+              "label": "Run",
+              "command": "macros:run"
+            },
+            {
+              "label": "Open macro",
+              "command": "macros:openMacro"
+            },
+            {
+              "label": "Update Menu",
+              "command": "macros:updateMenu"
+            },
+            {
+              "type": "separator"
+            }
+          ]
+
+    }
+  ]
+}
