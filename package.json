@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "atom-select-list": "^0.7.1",
-    "sharp":"https://github.com/lovell/sharp"
+    "sharp":"https://github.com/lovell/sharp.git"
   }
 }
