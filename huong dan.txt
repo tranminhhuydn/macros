@@ -2,7 +2,7 @@ Sau ki download và giải nén vào bất cứ nơi đâu. Trong ví dụ này 
 sau ki giải nén
 mở chương trình cmd.exe
 Mình đang dùng win10
-từ địa chỉ c:\windows\system32\cmd.exe 
+từ địa chỉ c:\windows\system32\cmd.exe
 sau đó gõ lệnh bên dưới.
 apm link "c:\\macros"
 
