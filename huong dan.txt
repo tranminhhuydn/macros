@@ -5,3 +5,6 @@ Mình đang dùng win10
 từ địa chỉ c:\windows\system32\cmd.exe 
 sau đó gõ lệnh bên dưới.
 apm link "c:\\macros"
+
+Chú ý:
+  - trong thư mục con của thư mục c:\\macros\data có các file với đuôi mở rộng là ".rar" nhớ bung ra nhé
