@@ -1,7 +1,7 @@
 console.clear();
 console.log("Unicode_6.1.0_Radical_Stroke_Index.js")
 const SelectList = require('atom-select-list');
-const dataHanviet = this.listDB.boFull
+const dataHanviet = this.listDB.boFull.data
 //console.log(dataHanviet);
 
 const editor = atom.workspace.getActiveTextEditor()

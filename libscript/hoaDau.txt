@@ -1,0 +1,10 @@
+function hoaDau(text){
+  var texts = text.split(" ")
+  for (var i = 0; i < texts.length; i++) {
+    texts[i]= texts[i].toLowerCase()
+    f = texts[i].charAt(0).toUpperCase()
+    texts[i] = f+texts[i].substr(1,texts[i].length)
+    //console.log(f+texts[i]);
+  }
+  return texts.join(" ");
+}

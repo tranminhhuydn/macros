@@ -111,6 +111,7 @@ var db = this.listDB.translate.data;
 
 function translate(input){
   input = input.replace(/\'/g,"")
+  input = beforeTranslate(input)
   try{
     var res = ""
     , key = ""
@@ -209,6 +210,7 @@ function translate(input){
     });
 
   }
+  input = affterTranslate(input)
   return input;
 }
 var count = 0;
@@ -392,31 +394,35 @@ function realizeYear(input){
   return input
 }
 
-function onceRex(input,partten,strReplace){
-  if(partten.test(input)){
-    var re = partten.exec(input)
-    if(re.length>0){
-      for(var j=1;j<re.length;j++){
-        strReplace = strReplace.replace("\\"+j,re[j])
-      }
-      input = input.replace(re[0],strReplace)
-    }
+function beforeTranslate(input){
+  var dataMauCau = self.listDB.setting.data.mauCau
+  // input = onceRex(input,/(受到)(\W{2})(的)(\W{2})/,"được \\2\\4")
+  // //东京洛阳,受到特殊的礼遇。武后命令
+  // //thụ đáo..đích..
+  // //《》“”()""中
+  // //“楞伽师资记”中
+  // //《楞伽师资记》中
+  // //（楞伽师资记）中
+  // //【楞伽师资记】中
+  // //(楞伽师资记)中
+  // input = onceRex(input,/《(.*)》(中)/,"\\2\"\\1\"")
+  // input = onceRex(input,/“(.*)”(中)/,"\\2\"\\1\"")
+  // input = onceRex(input,/\((.*)\)(中)/,"\\2\"\\1\"")
+  // input = onceRex(input,/\"(.*)\"(中)/,"\\2\"\\1\"")
+  // //(764年)
+  // input = onceRex(input,/\((\d{1,3})(年)\)/,'(\\2\\1\\)')
+  // //“东山法门”初步具备了佛教学派哪些特征?
+  // input = onceRex(input,/(哪些)(\W{1,4})(\?)/,"\\2gì?")
+  for (var i = 0; i < dataMauCau.length; i++) {
+    if(dataMauCau[i][3]==true)
+    input = onceRex(input,dataMauCau[i][0],dataMauCau[i][1])
   }
   return input
 }
-//东京洛阳,受到特殊的礼遇。武后命令
-//thụ đáo..đích..
-input = onceRex(input,/(受到)(\W{2,3})(的)(\W{2,3})。/,"được \\2\\4。")
-//《》“”()""中
-//《楞伽师资记》中
-input = onceRex(input,/《(.*)》(中)/,"\\2\"\\1\"")
-input = onceRex(input,/“(.*)”(中)/,"\\2\"\\1\"")
-input = onceRex(input,/\((.*)\)(中)/,"\\2\"\\1\"")
-input = onceRex(input,/\"(.*)\"(中)/,"\\2\"\\1\"")
-//(764年)
-input = onceRex(input,/\((\d{1,3})(年)\)/,'(\\2\\1\\)')
-//“东山法门”初步具备了佛教学派哪些特征?
-input = onceRex(input,/(哪些)(\W{1,4})(\?)/,"\\2gì?")
+function affterTranslate(input){
+  return input
+}
+
 
 input = realizeYear(input)
 input = realizeNoun(input)

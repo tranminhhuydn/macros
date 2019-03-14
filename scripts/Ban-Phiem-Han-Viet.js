@@ -1,7 +1,7 @@
 console.clear();
 console.log("Ban-Phiem-Han-Viet.js")
 const SelectList = require('atom-select-list');
-const dataHanviet =this.listDB.hanViet
+const dataHanviet =this.listDB.hanViet.data
 //console.log(dataHanviet);
 
 const editor = atom.workspace.getActiveTextEditor()
